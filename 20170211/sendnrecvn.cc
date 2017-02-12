@@ -1,4 +1,6 @@
 #include "head.h"
+
+//每次发送n个字节数据
 int sendn(int fd,char*buf,int len)
 {
 	int total=0,pos=0;
@@ -16,7 +18,6 @@ int recvn(int fd,char*buf,int len)
 	while(total<len)
 	{
 		pos=recv(fd,buf+total,len-total,0);
-		printf("total=%d,pos=%d\n",total,pos);
 		total+=pos;
 	}
 	return 0;
